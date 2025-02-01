@@ -14,6 +14,24 @@ document.getElementById('add-money-form').addEventListener('submit', function(ev
     if (addPiInput === '1234') {
         console.log('Adding your money to your account');
         alert('Money added successfully!');
+
+        // get the current balance
+        const balance = document.getElementById('account-balance').innerText;
+console.log( typeof balance);
+
+//add money input with balance
+const addMoneyNumber = parseFloat(addMoneyInput);
+const balanceNumber = parseFloat(balance)
+const newBalance =addMoneyNumber +balanceNumber;
+console.log(newBalance);
+
+
+//update the balance in the ui
+
+document.getElementById('account-balance').innerText = newBalance;
+
+
+
     } else {
         alert('Failed to add money! Please try again.');
     }
